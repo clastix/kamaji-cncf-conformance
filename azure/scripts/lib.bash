@@ -84,7 +84,7 @@ function create_aks() {
     --nodepool-name $AKS_NAME \
     --vnet-subnet-id $SUBNET_ID \
     --resource-group $RG \
-    --yes 
+    --generate-ssh-keys --yes 
 
     az aks wait --resource-group $RG --name $AKS_NAME --created --interval 60 --timeout 600
     az aks show --resource-group $RG --name $AKS_NAME
