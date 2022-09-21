@@ -20,7 +20,7 @@ function create_kubeconfig() {
     NAME=$1
     DOMAIN=$2
     kubectl wait tcp/$NAME --for jsonpath='{.status.kubernetesResources.version.status}=Ready' --timeout=120s
-    kubectl get secrets $NAME-admin-kubeconfig -o json | jq -r '.data["admin.conf"]' | base64 --decode > /tmp/$NAME.kubeconfig
+    kubectl get secrets $NAME-admin-kubeconfig -o json | jq -r '.data["admin.conf"]' | base64 -d > /tmp/$NAME.kubeconfig
     kubectl --kubeconfig=/tmp/$NAME.kubeconfig config set-cluster $NAME --server https://$NAME.$DOMAIN
 }
 
