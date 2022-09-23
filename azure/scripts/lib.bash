@@ -159,12 +159,19 @@ function vmss_run_command() {
 
     for i in ${!VMIDS[@]}; do
     VMID=${VMIDS[$i]}
+
+    az vmss wait \
+        --updated \
+        --instance-id ${VMID} \
+        --name $VMSS_NAME \
+        --resource-group $RG
+
     az vmss run-command create \
-	--name kubeadm-join-command \
+	    --name kubeadm-join-command \
         --vmss-name $VMSS_NAME \
-	--resource-group $RG \
-	--instance-id ${VMID} \
-	--script "${COMMAND}"
+	    --resource-group $RG \
+	    --instance-id ${VMID} \
+	    --script "${COMMAND}"
 done
 
 }
