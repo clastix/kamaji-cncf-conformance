@@ -5,16 +5,17 @@ LABEL image="docker.io/clastix/kamaji-cncf-conformance:latest"
 
 ARG ARCH=amd64
 ARG KUBE_URL=https://storage.googleapis.com
-ARG KUBE_VERSION=v1.25.0
+ARG KUBE_VERSION=v1.27.3
 
 ARG HELM_VER=v3.9.2
 ARG HELM_URL=https://get.helm.sh
 
-ARG SONOBUOY_VERSION=v0.56.10
+ARG SONOBUOY_VERSION=v0.56.16
 ARG SONOBUOY_URL=https://github.com/vmware-tanzu/sonobuoy
 
 ENV KAMAJI_REGION=westeurope
-ENV TENANT_VERSION=v1.25.0
+ENV KAMAJI_VERSION=v0.3.3
+ENV TENANT_VERSION=v1.27.3
 
 RUN curl -LO ${KUBE_URL}/kubernetes-release/release/${KUBE_VERSION}/bin/linux/${ARCH}/kubeadm && \
 mv kubeadm /usr/local/bin/kubeadm && \
