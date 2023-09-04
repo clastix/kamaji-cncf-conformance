@@ -25,7 +25,7 @@ git clone https://github.com/clastix/kamaji-cncf-conformance
 cd kamaji-cncf-conformance
 
 # Set Kubernetes version of Tenant Cluster
-export TENANT_VERSION=v1.25.0
+export TENANT_VERSION=v1.27.3
 
 # Run the test
 make
