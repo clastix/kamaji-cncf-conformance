@@ -99,12 +99,10 @@ spec:
     coreDNS: {}
     kubeProxy: {}
     konnectivity:
-      proxyPort: ${PROXY_PORT}
-      resources:
-        requests:
-          cpu: 100m
-          memory: 128Mi
-        limits: {}
+      server:
+        port: 8132
+        resources: {}
+      agent: {}
 ---
 apiVersion: v1
 kind: Service
@@ -118,7 +116,7 @@ spec:
     protocol: TCP
     targetPort: ${PORT}
   selector:
-    kamaji.clastix.io/soot: ${NAME}
+    kamaji.clastix.io/name: ${NAME}
   type: LoadBalancer
 EOF
 

@@ -6,9 +6,7 @@ azure-aks-create:
 	./azure/scripts/create-admin-cluster.bash
 
 kamaji-setup:
-	helm repo add clastix https://clastix.github.io/charts
-	helm repo update
-	helm install kamaji clastix/kamaji -n kamaji-system --create-namespace
+	./kamaji/scripts/install-kamaji.bash
 
 tenant-control-plane: 
 	./kamaji/scripts/create-control-plane.bash
