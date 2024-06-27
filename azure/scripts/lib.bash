@@ -172,6 +172,5 @@ function vmss_run_command() {
 	    --resource-group $RG \
 	    --instance-id ${VMID} \
 	    --script "${COMMAND}"
-done
-
+    done
 }
