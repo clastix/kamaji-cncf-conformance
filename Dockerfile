@@ -10,13 +10,14 @@ ARG KUBE_VERSION=v1.27.3
 ARG HELM_VER=v3.9.2
 ARG HELM_URL=https://get.helm.sh
 
-ARG SONOBUOY_VERSION=v0.56.16
+ARG SONOBUOY_VERSION=v0.57.1
 ARG SONOBUOY_URL=https://github.com/vmware-tanzu/sonobuoy
 
 ENV KAMAJI_REGION=westeurope
 ENV KAMAJI_VERSION=v0.3.3
 ENV TENANT_VERSION=v1.27.3
 
+RUN apk --no-cache add curl
 RUN curl -LO ${KUBE_URL}/kubernetes-release/release/${KUBE_VERSION}/bin/linux/${ARCH}/kubeadm && \
 mv kubeadm /usr/local/bin/kubeadm && \
 chmod +x /usr/local/bin/kubeadm
