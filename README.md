@@ -24,8 +24,11 @@ export KAMAJI_REGION=westeurope
 git clone https://github.com/clastix/kamaji-cncf-conformance
 cd kamaji-cncf-conformance
 
+# Set version of Kamaji Operator
+KAMAJI_VERSION=v1.0.0
+
 # Set Kubernetes version of Tenant Cluster
-export TENANT_VERSION=v1.27.3
+export TENANT_VERSION=v1.30.0
 
 # Run the test
 make
