@@ -17,7 +17,7 @@ ENV KAMAJI_REGION=westeurope
 ENV KAMAJI_VERSION=v0.3.3
 ENV TENANT_VERSION=v1.27.3
 
-RUN apk --no-cache add curl
+RUN apk --no-cache add curl git make
 RUN curl -LO ${KUBE_URL}/kubernetes-release/release/${KUBE_VERSION}/bin/linux/${ARCH}/kubeadm && \
 mv kubeadm /usr/local/bin/kubeadm && \
 chmod +x /usr/local/bin/kubeadm
