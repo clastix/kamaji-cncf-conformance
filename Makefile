@@ -12,6 +12,7 @@ tenant-control-plane:
 	./kamaji/scripts/create-control-plane.bash
 
 azure-tenant-machines:
+	./azure/scripts/create-cloudinit.bash
 	./azure/scripts/create-vm.bash
 
 tenant-workers:
